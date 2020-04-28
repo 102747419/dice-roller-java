@@ -20,15 +20,19 @@ public class DiceRollerInJava {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         DiceRollerInJava dice = new DiceRollerInJava();
+        System.out.println("Do you want to roll die ???");
         while (true) {
-            int result = dice.roll();
-            System.out.println("dice face value:" + result);
-            dice.draw(result);
-
-            System.out.println("Roll again? (type no to quit):");
             String input = scanner.nextLine();
-            if (input.equalsIgnoreCase("n") ||
-                    input.equalsIgnoreCase("no")) {
+            if (input.equalsIgnoreCase("y") || input.equalsIgnoreCase("Yes"))
+            {
+                int result = dice.roll();
+                System.out.println("dice face value:" + result);
+                dice.draw(result);
+
+                System.out.println("Roll again? (type no to quit):");
+			}
+            else if (input.equalsIgnoreCase("n") || input.equalsIgnoreCase("no"))
+            {
                 System.out.println("Bye!");
                 scanner.close();
                 return;
