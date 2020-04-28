@@ -17,11 +17,22 @@ public class DiceRollerInJava {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         DiceRollerInJava dice = new DiceRollerInJava();
-        while (true) {
+        int num = 0;
+            int high = 0;
+            int sum = 0;
+            while (true) {
             int result = dice.roll();
+            sum = sum + result;
+            if (high < result)
+            { high = result;
+             }
+            
+            num = num+1;
             System.out.println("dice face value:" + result);
             dice.draw(result);
-
+            System.out.println("Number of rolls:" + num);
+            System.out.println("Highest number achieved:" + high);
+            System.out.println("Sum of total outcomes:" + sum);
             System.out.println("Roll again? (type no to quit):");
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("n") ||
