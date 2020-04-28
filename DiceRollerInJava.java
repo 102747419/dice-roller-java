@@ -12,7 +12,10 @@ public class DiceRollerInJava {
                            { { 0, 0, 1 }, { 0, 1, 0 }, { 1, 0, 0 } },
                            { { 1, 0, 1 }, { 0, 0, 0 }, { 1, 0, 1 } },
                            { { 1, 0, 1 }, { 0, 1, 0 }, { 1, 0, 1 } },
-                           { { 1, 0, 1 }, { 1, 0, 1 }, { 1, 0, 1 } } };
+						   { { 1, 0, 1 }, { 1, 0, 1 }, { 1, 0, 1 } },
+						   { { 1, 0, 1 }, { 1, 1, 1 }, { 1, 0, 1 } },
+						   { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } },
+						   { { 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 } } };
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -56,6 +59,6 @@ public class DiceRollerInJava {
     // Roll the dice in Java
     private int roll() {
         Random r = new Random();
-        return r.nextInt(6) + 1;
+        return r.nextInt(9) + 1;
     }
 }
